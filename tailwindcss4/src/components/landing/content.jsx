@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Content = () => {
+  const navigate = useNavigate(); // ✅ Initialize navigation
+
   return (
     <div className="h-screen flex flex-col justify-center items-center bg-[#F8FAFC] px-10">
       
@@ -14,7 +17,10 @@ const Content = () => {
           <p className="text-lg text-gray-600 mt-4">
             Let our AI analyze and detect potential conditions in seconds, providing you with insights instantly.
           </p>
-          <button className="mt-6 px-6 py-3 bg-[#7886C7] text-white font-semibold rounded-lg hover:bg-[#5a6fb9] transition">
+          <button 
+            className="mt-6 px-6 py-3 bg-[#7886C7] text-white font-semibold rounded-lg hover:bg-[#5a6fb9] transition"
+            onClick={() => navigate('/options')} // ✅ Navigates to /options
+          >
             Upload Now
           </button>
         </div>
@@ -29,8 +35,11 @@ const Content = () => {
           <p className="text-lg text-gray-600 mt-4">
             Connect with top medical professionals near you and receive expert guidance based on your reports.
           </p>
-          <button className="mt-6 px-6 py-3 bg-[#7886C7] text-white font-semibold rounded-lg hover:bg-[#5a6fb9] transition">
-            Find Experts
+          <button 
+            className="mt-6 px-6 py-3 bg-[#7886C7] text-white font-semibold rounded-lg hover:bg-[#5a6fb9] transition"
+            onClick={() => navigate('/options')} // ✅ Navigates to /options
+          >
+            Explore
           </button>
         </div>
         <img src="doctor.jpg" alt="Medical Consultation" className="w-80 h-80 rounded-full border-4 border-[#7886C7] shadow-lg mx-auto" />

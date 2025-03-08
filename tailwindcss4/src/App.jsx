@@ -1,11 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Landing from "./components/landing/landing"; // Ensure the correct path and capitalization
+import Landing from "./components/landing/landing"; 
+import Options from "./components/options/options";
+
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Landing />} /> {/* Correctly routes to the Landing component */}
+        <Route path="/" element={<Landing />} /> 
+        <Route path="/options" element={<Options />} />
       </Routes>
     </Router>
   );

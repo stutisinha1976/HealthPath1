@@ -1,33 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import Content from './content'; // Import the Content component
+import { useNavigate } from 'react-router-dom';
+import Content from './content';
+import Navbar from './Navbar';
 
 const Landing = () => {
   const [isComplete, setIsComplete] = useState(false);
+  const navigate = useNavigate(); // Initialize navigation
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsComplete(true), 5000); // 4s typewriter + 1s delay
+    const timer = setTimeout(() => setIsComplete(true), 5000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="w-full bg-[#FFF2F2] font-mono">
-      {/* Header */}
-      <nav className="w-full bg-[#7886C7] text-white p-6 text-3xl flex items-center justify-between">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold">Health Path AI</h1>
-        </div>
-        <div className="flex space-x-6">
-          <button className="bg-transparent text-white text-xl hover:text-gray-200 focus:outline-none">
-            About us
-          </button>
-          <button className="bg-transparent text-white text-xl hover:text-gray-200 focus:outline-none">
-            Featured
-          </button>
-          <button className="bg-transparent text-white text-xl border px-4 py-2 rounded-lg hover:bg-white hover:text-[#7886C7] transition">
-            Login / Signup
-          </button>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <div className="w-full flex flex-col items-center justify-center text-center py-20 bg-gradient-to-r from-[#FFDEE9] to-[#B5FFFC]">
@@ -37,7 +24,10 @@ const Landing = () => {
         <p className="text-xl text-[#333] mt-4 w-3/4">
           Revolutionizing healthcare with AI-powered diagnostics and personalized recommendations.
         </p>
-        <button className="mt-6 bg-[#7886C7] text-white text-lg px-6 py-3 rounded-full hover:bg-[#5D6AB0] transition">
+        <button
+          className="mt-6 bg-[#7886C7] text-white text-lg px-6 py-3 rounded-full hover:bg-[#5D6AB0] transition"
+          onClick={() => navigate('/options')} // Navigate to Options page
+        >
           Get Started
         </button>
       </div>
