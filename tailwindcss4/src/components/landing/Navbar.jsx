@@ -5,7 +5,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="w-full bg-[#7886C7] text-white p-6 text-3xl flex items-center justify-between sticky top-0 z-10">
+    <nav className="w-full bg-[#7886C7] font-mono text-white p-6 text-3xl flex items-center justify-between sticky top-0 z-10">
       <div className="text-center">
         <h1 className="text-4xl font-bold">Health Path AI</h1>
       </div>
